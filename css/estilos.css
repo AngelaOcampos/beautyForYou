@@ -41,6 +41,9 @@ h1 {
   color: #364646;
   font-family: "Caveat Brush";
 }
+.titulo{
+  display: block;
+}
 nav li {
   display: flex;
   text-align: center;
