@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9eabe4;
+  background-image: linear-gradient(315deg, #9eabe4 0%, #77eed8 74%);
+}
+.body, .bodyProductos{
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: 
+  "header header header"
+	"contenido contenido contenido"
+  "footer footer footer"
+}
+.header{
+  grid-area: header;
+}
+.contenido{
+  grid-area: contenido;
+}
+.footer {
+	grid-area: footer;
+}
+header {
+  text-align: center;
+  margin: 0.5rem;
+}
+header img {
+  align-self: center;
+  border-radius: 3%;
+}
+h1 {
+  text-align: center;
+  margin-top: auto;
+  color: #364646;
+  font-family: "Caveat Brush";
+}
+nav li {
+  display: flex;
+  text-align: center;
+  margin: 0.5rem;
+  padding: 10px;
+  font-family: "Caveat Brush";
+}
+nav li a:hover {
+  background-color: #888888;
+  color: black;
+  font-weight: bold;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 35rem;
+}
+.imgInicio {
+  width: 170px;
+  height: 150px;
+  opacity: 0.9;
+  border: 2px double #949493;
+  border-radius: 3%;
+}
+.imgInicio:hover{
+  opacity: 0.5;
+  border: solid 2px color white;
+}
+p {
+  margin: 1rem;
+  padding: 15px;
+  text-align: center;
+  font-family: "Patrick Hand SC";
+  color: #364646;
+}
+iframe {
+  margin: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+footer {
+  text-align: right;
+  padding-right: 2rem;
+  font-family: "Caveat Brush";
+  color: #364646;
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  margin: 0.8rem;
+  justify-content: flex-end;
+}
+footer ul li {
+  padding: 0.3rem;
+}
+.ofrecer {
+  width: 100%;
+  text-align: center;
+  font-family: "Caveat Brush";
+  color: #364646;
+  position: relative;
+  overflow: auto;
+}
+.productos {
+  padding: 0;
+  display: block;
+  text-align: center;
+  margin-top: 0;
+  font-family: "Patrick Hand SC";
+  position: relative;
+  overflow: auto;
+}
+.contenedor{
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr,2fr,2fr,3fr;
+	grid-template-areas: 
+  "header header header header"
+	"caja1 caja2 caja3 aside"
+  "footer footer footer footer";
+}
+.headerContactos{
+  grid-area:header;
+}
+.caja1,.caja2,.caja3{
+	padding: 20px;
+	height: 100px;
+	text-align: center;}
+.caja1 {
+	grid-area: caja1;
+}
+.caja2 {
+	grid-area: caja2;}
+.caja3{
+	grid-area: caja3;
+}
+.footerContactos{
+  grid-area: footer;
+}
+.asideContactos{
+  grid-area: aside;
+  padding: 20px;
+	border-radius: 4px;
+	text-align: center;
+	width: 100%;
+}
+.contacto {
+  display:flex;
+  flex-direction: row;
+  width: 75%;
+  justify-content: space-evenly;
+  text-align: center;
+  font-family: "Caveat Brush";
+  color: #364646;
+  position: relative;
+  overflow: auto; 
+}
+.contacto li{
+    font-family: "Patrick Hand SC";
+}
+.nTelefono{
+  list-style-type: none;
+}
+.caja1 li{
+  font-family: "Patrick Hand SC";
+}
+.contenedorServicios {	
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4,auto);
+	grid-template-areas: 
+  "header header header"
+	"contenido contenido sidebar"
+	"contenido contenido sidebar"
+	"footer footer footer";
+}
+  .headerServicios{
+  grid-area: header;
+}
+.footerServicios {
+	height: 50px;
+	grid-area: footer;
+}
+.contenidoServicios{
+	padding: 1.25rem;
+	line-height: 1.5;
+	grid-area: contenido;
+}
+.asideServicios {
+  grid-area: sidebar;
+  display:flex;
+  flex-flow: column nowrap;
+  overflow: auto;
+  padding: 1.25rem;
+  justify-items: center;
+	align-items: center;	
+  width: fit-content;
+  height: 35rem;
+}
+.servicios {
+  width: 100%;
+  text-align: center;
+  font-family: "Caveat Brush";
+  color: #364646;
+  overflow: auto;
+}
+aside {
+  flex-flow: column nowrap;
+  position: relative;
+  overflow: auto;
+}
+aside img {
+  width: 10rem;
+  border-radius: 3%;
+}
+.descripcionServicios {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 1rem;
+  text-align: start;
+  padding: 0;
+  margin-bottom: 0;
+  font-family: "Patrick Hand SC";
+}
+.textoServicios {
+  padding: 0;
+  display: flex;
+  text-align: start;
+  margin-top: 0;
+  font-family: "Patrick Hand SC";
+}
+h3 {
+  margin: 1rem;
+  padding: 15px;
+  text-align: center;
+  color: #364646;
+  font-family: "Caveat Brush";
+}
+@media screen and (max-width: 480px){
+  .body{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "header header header"
+    "contenido contenido contenido"
+    "footer footer footer";
+  } 
+
+  .contenido{
+    overflow: auto;
+  }
+  .imgInicio{
+
+    width: 85px;
+    height: 75px; 
+  }
+  .asideServicios {
+    padding: 0;
+	  text-align: center;
+	  grid-area: sidebar;
+    width: 100%;
+    overflow: auto;
+     height: 35rem;
+  }
+  .contenedor{
+	  display: grid;
+	  gap: 1rem;
+	  grid-template-columns: 1fr; 
+	  grid-template-rows: 1fr,2fr,2fr,2fr,2fr,1fr;
+	  grid-template-areas: 
+    "header"
+		"caja1"
+    "caja2"
+    "caja3" 
+    "aside"
+    "footer";
+  }
+  .tituloContacto, .textoContacto{
+    padding: 0.2rem;
+  }
+}
+
