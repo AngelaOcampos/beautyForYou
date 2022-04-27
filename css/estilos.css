@@ -1,76 +1,71 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #9eabe4;
-    background-image: linear-gradient( to top,#77eed8 0%, #9eabe4 35%, #77eed8 74%);
-  }
-  .logo{
-    width: 10rem;
-    height: 8.5rem;
-    opacity: 0.9;
-    border: 2px #949493;
-    border-radius: 3%;
-  }
-  .imgInicio {
-    width: 18rem;
-    height: 18rem;
-    opacity: 0.9;
-    border: 2px #949493;
-    border-radius: 3%;
-  }
-  .imgInicio:hover{
-    opacity: 0.5;
-    border: solid 2px color white;
-  }
-  p {
-    margin: 1rem;
-    padding: 15px;
-    text-align: center;
-    font-family: "Patrick Hand SC";
-    color: #364646;
-  }
-  .textoNav{
-    display: flex;
-    text-align: center;
-    margin: 0.5rem;
-    padding: 10px;
-    font-family: "Caveat Brush";
-  }
-.textoNav:hover{
-  background-color: #888888;
-  color: black;
-  font-weight: bold;
-}
-.navActivo{
-    color: black;
-}
-.footer{
-  font-family: "Caveat Brush";
-  color: #364646;
-}
-footer ul {
-  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #9eabe4;
+  background-image: linear-gradient(to top, #77eed8 0%, #9eabe4 35%, #77eed8 74%); }
+
+p {
+  margin: 1rem;
+  padding: 15px;
+  text-align: center;
+  font-family: "Patrick Hand SC";
+  color: #364646; }
+
+.textoNav {
   display: flex;
-  margin: 0.8rem;
-  justify-content: flex-end;
-}
-.videoInicio{
-  width: 30rem;
-  height: 15rem;
-}
-ul,li{
-  list-style: none;
-}
+  text-align: center;
+  margin: 0.5rem;
+  padding: 10px;
+  font-family: "Caveat Brush"; }
+  .textoNav:hover {
+    background-color: #888888;
+    color: black;
+    font-weight: bold; }
+
 .textoServicios {
   text-align: justify;
-  font-family: "Patrick Hand SC";
-}
-h1,h3,h4{
+  font-family: "Patrick Hand SC"; }
+
+h1, h3, h4 {
   text-align: center;
   font-family: "Caveat Brush";
-  color: #364646;
-}
+  color: #364646; }
+
+ul, li {
+  list-style: none; }
+
+.logo {
+  width: 10rem;
+  height: 8.5rem;
+  opacity: 0.9;
+  border: 2px #949493;
+  border-radius: 3%; }
+
+.navActivo {
+  color: black; }
+
+.footer {
+  font-family: "Caveat Brush";
+  color: #364646; }
+  .footer .linksFooter {
+    list-style: none;
+    display: flex;
+    margin: 0.8rem;
+    justify-content: flex-end; }
+
+.imgInicio {
+  width: 18rem;
+  height: 18rem;
+  opacity: 0.9;
+  border: 2px #949493;
+  border-radius: 3%; }
+  .imgInicio:hover {
+    opacity: 0.5;
+    border: solid 2px color white; }
+
+.videoInicio {
+  width: 30rem;
+  height: 15rem; }

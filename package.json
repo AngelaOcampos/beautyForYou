@@ -1,0 +1,25 @@
+{
+  "name": "beautyforyou",
+  "version": "1.0.0",
+  "description": "json for beautyforyou",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/estilos.scss css/estilos.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelaOcampos/beautyForYou.git"
+  },
+  "author": "Angela Ocampos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngelaOcampos/beautyForYou/issues"
+  },
+  "homepage": "https://github.com/AngelaOcampos/beautyForYou#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15"
+  }
+}

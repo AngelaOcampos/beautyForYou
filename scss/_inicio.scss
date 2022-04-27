@@ -1,0 +1,17 @@
+
+  .imgInicio {
+    width: 18rem;
+    height: 18rem;
+    opacity: 0.9;
+    border: 2px $grisClaro;
+    border-radius: 3%;
+    :hover{
+        opacity: 0.5;
+        border: solid 2px color white;
+      }
+  }
+
+  .videoInicio{
+    width: 30rem;
+    height: 15rem;
+  }

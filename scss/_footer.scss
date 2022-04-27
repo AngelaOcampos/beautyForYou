@@ -1,0 +1,11 @@
+.footer{
+    font-family: $tipografiaTitulos;
+    color: $grisVerde;
+    .linksFooter {
+        list-style: none;
+        display: flex;
+        margin: 0.8rem;
+        justify-content: flex-end;
+      }
+  }
+  

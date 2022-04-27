@@ -1,0 +1,32 @@
+p {
+    margin: 1rem;
+    padding: 15px;
+    text-align: center;
+    font-family: $tipografiaRelleno;
+    color: $grisVerdoso;
+  }
+  .textoNav{
+    display: flex;
+    text-align: center;
+    margin: 0.5rem;
+    padding: 10px;
+    font-family: $tipografiaTitulos;
+    &:hover{
+        background-color: #888888;
+        color: black;
+        font-weight: bold;
+      }
+  }
+.textoServicios {
+    text-align: justify;
+    font-family: $tipografiaRelleno ;
+  }
+  h1,h3,h4{
+    text-align: center;
+    font-family: $tipografiaTitulos;
+    color: $grisVerdoso;
+  }
+  ul,li{
+    list-style: none;
+  }
+    
