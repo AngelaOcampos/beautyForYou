@@ -7,16 +7,17 @@ body {
   background-color: #9eabe4;
   background-image: linear-gradient(to top, #77eed8 0%, #9eabe4 35%, #77eed8 74%); }
 
+.textoCentrado, p, .textoNav, h1, h3, h4 {
+  text-align: center; }
+
 p {
   margin: 1rem;
   padding: 15px;
-  text-align: center;
-  font-family: "Patrick Hand SC";
-  color: #364646; }
+  color: #364646;
+  font-family: "Patrick Hand SC"; }
 
 .textoNav {
   display: flex;
-  text-align: center;
   margin: 0.5rem;
   padding: 10px;
   font-family: "Caveat Brush"; }
@@ -30,12 +31,12 @@ p {
   font-family: "Patrick Hand SC"; }
 
 h1, h3, h4 {
-  text-align: center;
-  font-family: "Caveat Brush";
-  color: #364646; }
+  color: #364646;
+  font-family: "Caveat Brush"; }
 
 ul, li {
-  list-style: none; }
+  list-style: none;
+  font-family: "Patrick Hand SC"; }
 
 .logo {
   width: 10rem;
@@ -62,7 +63,7 @@ ul, li {
   opacity: 0.9;
   border: 2px #949493;
   border-radius: 3%; }
-  .imgInicio:hover {
+  .imgInicio :hover {
     opacity: 0.5;
     border: solid 2px color white; }
 
