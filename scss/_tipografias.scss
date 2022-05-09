@@ -9,8 +9,10 @@
 p{
     margin: 1rem;
     padding: 15px;
+    font-size: 150%;
     @include colorYLetra($grisVerdoso,$tipografiaRelleno);
     @extend .textoCentrado
+    
   }
   .textoNav{
     display: flex;
@@ -36,6 +38,5 @@ p{
     list-style: none;
     font-family: $tipografiaRelleno;
   }
-  
-  
+ 
   
