@@ -4,24 +4,22 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #9eabe4;
-  background-image: linear-gradient(to top, #f9ab87 15%, #ffbb9c 35%, #fccab3 40%); }
+  background-color: #fae3d8; }
 
 .textoCentrado, p, .textoNav, h1, h3, h4 {
   text-align: center; }
 
 p {
-  margin: 1rem;
-  padding: 15px;
+  padding: 1rem;
   font-size: 150%;
   color: #364646;
-  font-family: "Patrick Hand SC"; }
+  font-family: "Forum"; }
 
 .textoNav {
   display: flex;
   margin: 0.5rem;
   padding: 10px;
-  font-family: "Caveat Brush"; }
+  font-family: "Forum"; }
   .textoNav:hover {
     background-color: #888888;
     color: black;
@@ -29,19 +27,22 @@ p {
 
 .textoServicios {
   text-align: justify;
-  font-family: "Patrick Hand SC"; }
+  font-family: "Lora"; }
 
 h1, h3, h4 {
   color: #364646;
-  font-family: "Caveat Brush"; }
+  font-family: "Forum"; }
 
 ul, li {
   list-style: none;
-  font-family: "Patrick Hand SC"; }
+  font-family: "Forum"; }
+
+.header {
+  background-image: linear-gradient(to bottom, #fccab3 0%, #fae3d8 40%); }
 
 .logo {
-  width: 10rem;
-  height: 8.5rem;
+  width: 15em;
+  height: 13rem;
   opacity: 0.9;
   border: 2px #949493;
   border-radius: 3%; }
@@ -50,24 +51,30 @@ ul, li {
   color: black; }
 
 .footer {
-  font-family: "Caveat Brush";
+  font-family: "Lora";
   color: #364646; }
   .footer .linksFooter {
     list-style: none;
     display: flex;
-    margin: 0.8rem;
     justify-content: flex-end; }
 
 .imgInicio {
-  width: 18rem;
-  height: 18rem;
+  height: 20rem;
   opacity: 0.9;
-  border: 2px #949493;
-  border-radius: 3%; }
-  .imgInicio :hover {
-    opacity: 0.5;
-    border: solid 2px color white; }
+  border-radius: 1.5%; }
 
-.videoInicio {
-  width: 30rem;
-  height: 15rem; }
+.form-control, .form-select {
+  width: 50%; }
+
+@media screen and (max-width: 425px) {
+  .form-control, .form-select {
+    width: 100%; } }
+
+.show-cart li {
+  display: flex; }
+
+.card {
+  margin-bottom: 20px; }
+
+.card-img-top {
+  align-self: center; }

@@ -7,10 +7,10 @@
 }
 
 p{
-    margin: 1rem;
-    padding: 15px;
+    
+    padding: 1rem;
     font-size: 150%;
-    @include colorYLetra($grisVerdoso,$tipografiaRelleno);
+    @include colorYLetra($grisVerdoso,$tipografiaTitulos);
     @extend .textoCentrado
     
   }
@@ -36,7 +36,8 @@ p{
   }
   ul,li{
     list-style: none;
-    font-family: $tipografiaRelleno;
+    font-family: $tipografiaTitulos;
   }
- 
+
+
   

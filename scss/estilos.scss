@@ -1,7 +1,7 @@
 $grisVerdoso: #364646;
 $grisClaro:#949493;
-$tipografiaTitulos:"Caveat Brush";
-$tipografiaRelleno:"Patrick Hand SC";
+$tipografiaTitulos:"Forum";
+$tipografiaRelleno:"Lora";
 
 * {
     margin: 0;
@@ -10,8 +10,8 @@ $tipografiaRelleno:"Patrick Hand SC";
   }
   
   body {
-    background-color: #9eabe4;
-    background-image: linear-gradient( to top,#f9ab87 15%, #ffbb9c  35%, #fccab3 40%);
+    background-color: #fae3d8;
+    
   }
   
  
@@ -19,3 +19,5 @@ $tipografiaRelleno:"Patrick Hand SC";
 @import "header";
 @import "footer";
 @import "inicio";
+@import "contactos";
+@import "servicios";
