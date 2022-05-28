@@ -28,7 +28,7 @@ p{
   }
 .textoServicios {
     text-align: justify;
-    font-family: $tipografiaRelleno ;
+    font-family: $tipografiaTitulos;
   }
   h1,h3,h4{
     @include colorYLetra ($grisVerdoso, $tipografiaTitulos);
