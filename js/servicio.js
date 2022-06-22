@@ -14,6 +14,8 @@ class Servicio{
     }
 }
 
+
+
 const depilacion = new Servicio("Depilacion", 1200);
 const pedicuria = new Servicio("Pedicuría", 1800)
 const manicuria = new Servicio("Manicuría", 1000);
