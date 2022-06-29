@@ -16,10 +16,10 @@ class Servicio{
 
 
 
-const depilacion = new Servicio("Depilacion", 1200);
-const pedicuria = new Servicio("Pedicuría", 1800)
-const manicuria = new Servicio("Manicuría", 1000);
-const liftingPestanias = new Servicio("Lifting de Pestañas", 800)
-const peelingQuimico = new Servicio("Peeling Químico", 2000)
-const keratina = new Servicio("Keratina", 2200)
+const manicuria                 = new Servicio("Manicuría", 2500);
+const peelingQuimico            = new Servicio("Peeling Químico", 1800)
+const alisado                   = new Servicio("Alisado", 3000);
+const pedicuria                 = new Servicio("Pedicuría", 2700)
+const limpiezaFacial            = new Servicio("Limpieza Facial", 2000)
+const botox                     = new Servicio("Botox", 3000)
 

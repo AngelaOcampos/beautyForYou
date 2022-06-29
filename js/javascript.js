@@ -1,31 +1,48 @@
 
 function sumarAlCarrito(servicio){
-   
-    if(carrito.includes(servicio)){
+    
+    let incluidoEnCarrito;
+    for(let objeto of carrito){
+        if(servicio.tratamiento == objeto.tratamiento){
+            incluidoEnCarrito = true;
+        }
+    }
+
+    if(incluidoEnCarrito){
          alert("Servicio ya seleccionado, se permite solamente una vez")    
     }else{
         carrito.push(servicio);
-        const liNuevoServicio = document.createElement("li")
-              liNuevoServicio.className = "border border-light"
-              liNuevoServicio.innerHTML = `<strong>Servicio</strong>: ${servicio.tratamiento} <strong>Precio</strong>: ${servicio.precio}`
-              liNuevoServicio.id = servicio.tratamiento + "EnCarrito"
-              liNuevoServicio.addEventListener("dblclick", ()=> quitarDelCarrito(servicio)) 
-              listadoCarrito.append(liNuevoServicio)
+        let carritoJson = JSON.stringify(carrito);
+        localStorage.setItem("carrito", carritoJson);
+        alert ("Se agrego " + servicio.tratamiento + " al carrrito")
     }
+}
+
+function cargarCarrito(servicio){
+   
+    const liNuevoServicio = document.createElement("li")
+            liNuevoServicio.className = "border border-light"
+            liNuevoServicio.innerHTML = `<strong>Servicio</strong>: ${servicio.tratamiento} <strong>Precio</strong>: ${servicio.precio}`
+            liNuevoServicio.id = servicio.tratamiento + "EnCarrito"
+            liNuevoServicio.addEventListener("dblclick", ()=> quitarDelCarrito(servicio)) 
+            listadoCarrito.append(liNuevoServicio)
 }
 
 function quitarDelCarrito(servicio){
-    if(carrito.includes(servicio)){
+
+        carrito.splice(carrito.indexOf(servicio),1)
+        let carritoJson = JSON.stringify(carrito);
+        localStorage.setItem("carrito", carritoJson);
+        
         const idServicio = servicio.tratamiento + "EnCarrito"
         const productoAremover = document.getElementById(idServicio)
         productoAremover.remove()
-        carrito.splice(carrito.indexOf(servicio),1)
-    } else { 
-        alert ("El servicio no se encuentra en el carrito")
+        textoTotalCarrito.innerText = "Total: $" + verTotalCarrito();
+   
     }
-}
 
 function verTotalCarrito(){
+   
     const valoresCarrito =[];
     carrito.forEach((servicio) => {
         valoresCarrito.push(servicio.precio);
@@ -39,7 +56,7 @@ function listarCarrito(){
     console.table(carrito);
 }
 
-botonReservar.addEventListener("click", terminarReserva);
+
 
 function terminarReserva(){
 
@@ -57,7 +74,7 @@ function terminarReserva(){
     }
 }}
 
-botonVaciar.addEventListener("click", vaciarCarrito);
+
 
 function vaciarCarrito(){
     if(carrito.length > 0){
