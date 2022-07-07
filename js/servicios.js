@@ -1,9 +1,4 @@
-carritoJson = JSON.parse(localStorage.getItem('carrito'))
-
-for(let servicio of carritoJson){
-
-    carrito.push( new Servicio(servicio.tratamiento, servicio.precio))
-}
+descargarCarritoDeLocalStorage();
 
 btnManicuria.addEventListener("click" , ()=> sumarAlCarritoEInformar(manicuria));
 btnPeelingQuimico.addEventListener("click" , ()=> sumarAlCarritoEInformar(peelingQuimico));
