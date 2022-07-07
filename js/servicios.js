@@ -5,9 +5,9 @@ for(let servicio of carritoJson){
     carrito.push( new Servicio(servicio.tratamiento, servicio.precio))
 }
 
-btnManicuria.addEventListener("click" , ()=> sumarAlCarrito(manicuria));
-btnPeelingQuimico.addEventListener("click" , ()=> sumarAlCarrito(peelingQuimico));
-btnAlisado.addEventListener("click" , ()=> sumarAlCarrito(alisado));
-btnPedicuria.addEventListener("click" , ()=> sumarAlCarrito(pedicuria));
-btnLimpiezaFacial.addEventListener("click" , ()=> sumarAlCarrito(limpiezaFacial));
-btnBotox.addEventListener("click" , ()=> sumarAlCarrito(botox));
+btnManicuria.addEventListener("click" , ()=> sumarAlCarritoEInformar(manicuria));
+btnPeelingQuimico.addEventListener("click" , ()=> sumarAlCarritoEInformar(peelingQuimico));
+btnAlisado.addEventListener("click" , ()=> sumarAlCarritoEInformar(alisado));
+btnPedicuria.addEventListener("click" , ()=> sumarAlCarritoEInformar(pedicuria));
+btnLimpiezaFacial.addEventListener("click" , ()=> sumarAlCarritoEInformar(limpiezaFacial));
+btnBotox.addEventListener("click" , ()=> sumarAlCarritoEInformar(botox));

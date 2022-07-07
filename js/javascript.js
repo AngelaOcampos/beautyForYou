@@ -1,7 +1,21 @@
+function guardarCarritoEnLocalStorage(){
+    let carritoJson =JSON.stringify(carrito);
+    localStorage.setItem("carrito", carritoJson);
+}
+function descargarCarritoDeLocalStorage(){
+    localStorage.getItem("carrito") ?? localStorage.setItem("carrito", '[]');
+
+    let carritoJson = JSON.parse(localStorage.getItem('carrito'))
+
+    for (let servicio of carritoJson){
+        sumarAlCarrito(new Servicio (servicio.tratamiento, servicio.precio));
+    }
+}
 
 function sumarAlCarrito(servicio){
     
     let incluidoEnCarrito;
+    let seAgrego = false;
     for(let objeto of carrito){
         if(servicio.tratamiento == objeto.tratamiento){
             incluidoEnCarrito = true;
@@ -9,14 +23,24 @@ function sumarAlCarrito(servicio){
     }
 
     if(incluidoEnCarrito){
-         alert("Servicio ya seleccionado, se permite solamente una vez")    
+         //alert("Servicio ya seleccionado, se permite solamente una vez")    
+        yaIncluido()
     }else{
         carrito.push(servicio);
         let carritoJson = JSON.stringify(carrito);
         localStorage.setItem("carrito", carritoJson);
-        alert ("Se agrego " + servicio.tratamiento + " al carrrito")
+        // alert ("Se agrego " + servicio.tratamiento + " al carrrito")
+        seAgrego = true;
     }
+
+    return seAgrego
 }
+
+function sumarAlCarritoEInformar(servicio){
+    
+    sumarAlCarrito(servicio) && sumadoAlCarrito(servicio.tratamiento);
+}
+    
 
 function cargarCarrito(servicio){
    
@@ -31,13 +55,12 @@ function cargarCarrito(servicio){
 function quitarDelCarrito(servicio){
 
         carrito.splice(carrito.indexOf(servicio),1)
-        let carritoJson = JSON.stringify(carrito);
-        localStorage.setItem("carrito", carritoJson);
+        guardarCarritoEnLocalStorage();
         
         const idServicio = servicio.tratamiento + "EnCarrito"
         const productoAremover = document.getElementById(idServicio)
         productoAremover.remove()
-        textoTotalCarrito.innerText = "Total: $" + verTotalCarrito();
+        textoTotalCarrito.innerText = "Total: $" + verTotalCarrito() || "carrito vacío"
    
     }
 
@@ -60,29 +83,71 @@ function listarCarrito(){
 
 function terminarReserva(){
 
-    if(verTotalCarrito() == 0){
-        alert("Aún no agregaste nada al carrito") 
-    } 
-    else {
-        if (confirm("El total sería de " + verTotalCarrito() + " ¿Listo para finalizar tu reserva?")){
-        while (carrito.length > 0){
-            quitarDelCarrito(carrito[0]);
-        }
-        console.log("'Tu reserva a sido un éxito, nos comunicaremos en la brevedad!") 
-    }else {
-        console.log ("Puede continuar reservando")
+    if(verTotalCarrito()== 0){
+        carritoVacio();
     }
-}}
+    else{
+        const confirmarReserva = ()=> {
+            Swal.fire({
+                title: "El total es de " + verTotalCarrito() + " ¿Quiere hacer su reserva?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Reservar',
+                cancelButtonText: 'Seguir con la reserva',
 
+            }) .then((result)=>{
+                if (result.isConfirmed){
+                    while(carrito.length > 0){
+                        quitarDelCarrito(carrito[0]);
+                    }
+                    Swal.fire({
+                        title: 'Reserva exitosa',
+                        icon: 'success',
+                        toast: true,
+                        timer: 2000,
+                        timerProgressBar: true,
+                    })
+                } else{
+                    continuarReserva()
 
-
-function vaciarCarrito(){
-    if(carrito.length > 0){
-        while (carrito.length > 0){
-            quitarDelCarrito(carrito[0]);
+                }
+            })
         }
-    }
-    else { 
-        alert ("El carrito ya se encuentra vacio")
+        confirmarReserva();
     }
 }
+                
+    
+function vaciarCarrito(){
+    if (verTotalCarrito() == 0){
+        carritoVacio();
+    }
+    else{
+        const vaciarCarrito = ()=> { 
+            Swal.fire({
+                title: "¿Seguro quiere vaciar el carrito?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: "Sí, quiero",
+                cancelButtonText: 'Continuar con la reserva',
+            }) .then((result) => {
+                if (result.isConfirmed){
+                    while(carrito.length > 0 ){
+                        quitarDelCarrito(carrito[0]);
+                    }
+                    Swal.fire({
+                        title: "Se vacío el carrito",
+                        icon: 'success',
+                        toast: true,
+                        timer: 2000,
+                        timerProgressBar: true,
+                    })
+                } else{
+                    continuarReserva()
+                }
+            })
+            } 
+            vaciarCarrito();
+        }
+    }
+

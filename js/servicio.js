@@ -4,14 +4,6 @@ class Servicio{
     this.tratamiento = tratamiento;
     this.precio = parseFloat(precio);
     }
-
-    modificarPrecio (precio) {
-        if (parseFloat(precio) >= 0 ){
-            this.precio = parseFloat(precio);
-        } else {
-            alert ( "El producto no puede ser menor que cero")
-        }
-    }
 }
 
 
