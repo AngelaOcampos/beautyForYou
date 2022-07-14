@@ -12,6 +12,8 @@ function descargarCarritoDeLocalStorage(){
     }
 }
 
+
+
 function sumarAlCarrito(servicio){
     
     let incluidoEnCarrito;

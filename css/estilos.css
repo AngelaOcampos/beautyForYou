@@ -63,6 +63,10 @@ ul, li {
   opacity: 0.9;
   border-radius: 1.5%; }
 
+.descripcion {
+  background-color: #f2fefa;
+  width: 75%; }
+
 .form-control, .form-select {
   width: 50%; }
 
@@ -78,3 +82,6 @@ ul, li {
 
 .card-img-top {
   align-self: center; }
+
+.article {
+  background-color: #fadacb; }

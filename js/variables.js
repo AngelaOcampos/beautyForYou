@@ -1,5 +1,9 @@
 const carrito = [];
 const servicios= [];
+const URL = `../js/servicios.json`
+
+
+const contenidoDOM = document.querySelector("#listaDeServicios")
 
 const listadoCarrito = document.querySelector(".listadoCarrito");
 const botonReservar = document.getElementById("botonReservar")
@@ -13,6 +17,7 @@ const btnAlisado = document.getElementById("alisado")
 const btnPedicuria = document.getElementById("pedicuria")
 const btnLimpiezaFacial = document.getElementById("limpiezaFacial")
 const btnBotox = document.getElementById("botox") 
+
 
 const yaIncluido = () => {
     Swal.fire({
