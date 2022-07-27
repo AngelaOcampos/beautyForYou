@@ -1,3 +1,4 @@
+// definición de los objetos tipo Tratamiento
 class Servicio{
     constructor (tratamiento, precio){
 
@@ -7,7 +8,7 @@ class Servicio{
 }
 
 
-
+// instanciando productos para que el usuario pueda sumar al carrito
 const manicuria                 = new Servicio("Manicuría", 2500);
 const peelingQuimico            = new Servicio("Peeling Químico", 1800)
 const alisado                   = new Servicio("Alisado", 3000);

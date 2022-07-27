@@ -1,12 +1,15 @@
+// descarga el carrito del localStorage para que el usuario pueda solamente agregar una sola reserva por cada tratamiento
 descargarCarritoDeLocalStorage();
 
+
+// función para generar el HTML de servicios.json y así poder cargarlo en servicios.html
 const retornoCardContenido = (contenido) => {
     
 
     const {imagen, nombre, precio, idHtml} = contenido
     let  retorno = {
         servicio: idHtml,
-        nombre: nombre,
+        tratamiento: nombre,
         precio: precio,
         codigoHtml:`
             <div class="col">
@@ -14,7 +17,7 @@ const retornoCardContenido = (contenido) => {
                     <img class="card-img-top" src="${imagen}" alt="${nombre}">
                     <div class="card-block">
                     <h3 class="card-text">${nombre}</h3>
-                    <p class ="card-text"><strong>${precio}</strong></p>
+                    <p class ="card-text"><strong>$${precio}</strong></p>
                     <a href="#" class=" btn btn-secondary" id="${idHtml}">RESERVAR TURNO</a>
                     </div>
                 </div>
@@ -24,9 +27,11 @@ const retornoCardContenido = (contenido) => {
     return retorno        
 }
 
-const registros = [];
-const listeners = [];
 
+// constantes y funciones que permiter mantener un orden al contenido Html al cargar en servicios.html
+const registros = [];
+// el listeners sirve para almacenar los botones que se podran usar para agregar los tratamientos al carrito.
+const listeners = [];
 const obtenerContenido = (URL) => {
     let cardsVista = ""
 
@@ -46,18 +51,13 @@ const obtenerContenido = (URL) => {
         }
         for(let i = 0; i < registros.length; i++){
             let botonServicio = listeners[i];
-            let nombreServicio = registros[i].servicio;
+            let tratamiento = registros[i].tratamiento;
+            let precio = registros[i].precio;
 
-            botonServicio.addEventListener("click", ()=> sumarAlCarritoEInformar(new Servicio(registros[i].nombre, registros[i].precio)));
+            botonServicio.addEventListener("click", ()=> sumarAlCarritoEInformar(new Servicio(tratamiento, precio)));
         }
     })
     
 }
 
 obtenerContenido(URL)
-// btnManicuria.addEventListener("click" , ()=> sumarAlCarritoEInformar(manicuria));
-// btnPeelingQuimico.addEventListener("click" , ()=> sumarAlCarritoEInformar(peelingQuimico));
-// btnAlisado.addEventListener("click" , ()=> sumarAlCarritoEInformar(alisado));
-// btnPedicuria.addEventListener("click" , ()=> sumarAlCarritoEInformar(pedicuria));
-// btnLimpiezaFacial.addEventListener("click" , ()=> sumarAlCarritoEInformar(limpiezaFacial));
-// btnBotox.addEventListener("click" , ()=> sumarAlCarritoEInformar(botox));

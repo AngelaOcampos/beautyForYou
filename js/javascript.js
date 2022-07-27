@@ -1,7 +1,10 @@
+// función que permite guardar el carrito en el localStorage
 function guardarCarritoEnLocalStorage(){
     let carritoJson =JSON.stringify(carrito);
     localStorage.setItem("carrito", carritoJson);
 }
+
+// función que descarga el carrito del localStorage 
 function descargarCarritoDeLocalStorage(){
     localStorage.getItem("carrito") ?? localStorage.setItem("carrito", '[]');
 
@@ -13,7 +16,7 @@ function descargarCarritoDeLocalStorage(){
 }
 
 
-
+// es la función que permite agregar la reserva al carrito validando que el tratamiento elegido no este sumado mas de una vez 
 function sumarAlCarrito(servicio){
     
     let incluidoEnCarrito;
@@ -24,14 +27,12 @@ function sumarAlCarrito(servicio){
         }
     }
 
-    if(incluidoEnCarrito){
-         //alert("Servicio ya seleccionado, se permite solamente una vez")    
+    if(incluidoEnCarrito){     
         yaIncluido()
     }else{
         carrito.push(servicio);
         let carritoJson = JSON.stringify(carrito);
         localStorage.setItem("carrito", carritoJson);
-        // alert ("Se agrego " + servicio.tratamiento + " al carrrito")
         seAgrego = true;
     }
 
@@ -43,7 +44,7 @@ function sumarAlCarritoEInformar(servicio){
     sumarAlCarrito(servicio) && sumadoAlCarrito(servicio.tratamiento);
 }
     
-
+// función que carga los servicios al carrito.html
 function cargarCarrito(servicio){
    
     const liNuevoServicio = document.createElement("li")
@@ -54,6 +55,7 @@ function cargarCarrito(servicio){
             listadoCarrito.append(liNuevoServicio)
 }
 
+// función que quita el servicio del carrito.hmtl
 function quitarDelCarrito(servicio){
 
         carrito.splice(carrito.indexOf(servicio),1)
@@ -66,6 +68,7 @@ function quitarDelCarrito(servicio){
    
     }
 
+ // función que nos retorna el total del carrito 
 function verTotalCarrito(){
    
     const valoresCarrito =[];
@@ -82,7 +85,7 @@ function listarCarrito(){
 }
 
 
-
+// función que permite terminar la reserva y retorna mensajes al usuario para que sepa que realizo la reserva 
 function terminarReserva(){
 
     if(verTotalCarrito()== 0){
@@ -103,10 +106,10 @@ function terminarReserva(){
                         quitarDelCarrito(carrito[0]);
                     }
                     Swal.fire({
-                        title: 'Reserva exitosa',
+                        title: 'Reserva exitosa, nos comunicaremos con usted en la brevedad.',
                         icon: 'success',
                         toast: true,
-                        timer: 2000,
+                        timer: 5000,
                         timerProgressBar: true,
                     })
                 } else{
@@ -119,7 +122,7 @@ function terminarReserva(){
     }
 }
                 
-    
+//  función que permite vaciar conntenido de carrito.html   
 function vaciarCarrito(){
     if (verTotalCarrito() == 0){
         carritoVacio();
