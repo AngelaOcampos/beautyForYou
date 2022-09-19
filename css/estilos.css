@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #fae3d8; }
+  background-color: whitesmoke; }
 
 .textoCentrado, p, .textoNav, h1, h3, h4 {
   text-align: center; }
@@ -38,7 +38,7 @@ ul, li {
   font-family: "Forum"; }
 
 .header {
-  background-image: linear-gradient(to bottom, #fccab3 0%, #fae3d8 40%); }
+  background-image: linear-gradient(to bottom, whitesmoke); }
 
 .logo {
   width: 15em;
@@ -64,7 +64,7 @@ ul, li {
   border-radius: 1.5%; }
 
 .descripcion {
-  background-color: #f2fefa;
+  background-color: transparent;
   width: 75%; }
 
 .form-control, .form-select {
